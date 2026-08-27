@@ -1,0 +1,47 @@
+{
+  "$aide": [
+    "L’ARDOISE DU JOUR — le seul fichier à modifier au quotidien.",
+    "",
+    "1. « plats » : les 4 plats mijotés du jour. Recopiez le nom EXACT tel qu’il",
+    "   apparaît dans content/repertoire-plats.json (208 recettes au répertoire).",
+    "   La description et la photo suivent automatiquement, vous n’avez rien",
+    "   d’autre à saisir.",
+    "",
+    "2. « platsCommandables » : true pour vendre les plats en ligne aux tarifs",
+    "   des deux formules (11 € base + plat, 13 € avec les garnitures) ;",
+    "   false pour les afficher avec la mention « à commander au comptoir ».",
+    "   Les tarifs eux-mêmes se changent dans src/lib/catalog.ts (FORMULES).",
+    "",
+    "3. « salades » : les salades signature proposées aujourd’hui. Noms exacts",
+    "   tels qu’ils figurent dans src/lib/catalog.ts. Laissez la liste vide",
+    "   ([]) pour afficher les cinq salades.",
+    "",
+    "4. « message » : une phrase libre affichée en haut de la carte, ou null.",
+    "",
+    "Après modification, lancez « npm run verifier » : il vous dira en français",
+    "si un nom est mal orthographié, et vous proposera la correction.",
+    "",
+    "« bases » et « garnitures » : ce qui accompagne les plats mijotés",
+    "aujourd'hui. Le client en choisit une de chaque sur la page Composer.",
+    "Le répertoire de tout ce qui a déjà été proposé est dans",
+    "content/accompagnements.json."
+  ],
+  "plats": [
+    "Poulet mafé",
+    "Poisson Miel et Sésame (saumon)",
+    "Bœuf caramel speculoos"
+  ],
+  "bases": [
+    "Fusili",
+    "Riz",
+    "Purée"
+  ],
+  "garnitures": [
+    "Pois cassés en risotto à la menthe",
+    "Tagliatelles de courgettes",
+    "Lentilles"
+  ],
+  "platsCommandables": true,
+  "salades": [],
+  "message": null
+}

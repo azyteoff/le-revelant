@@ -1,0 +1,197 @@
+@import "tailwindcss";
+
+/* ------------------------------------------------------------------
+   Le Révélant — design tokens
+   Blanc cassé · vert olive doux · beige naturel · noir profond
+   + touches rouge tomate (accent, jamais dominant)
+------------------------------------------------------------------- */
+@theme {
+  --color-cream: #fbf9f4;
+  --color-cream-2: #f4f0e7;
+  --color-sand: #e8e0d0;
+  --color-sand-2: #d9cdb6;
+  --color-olive: #6d7a4e;
+  --color-olive-deep: #48522f;
+  --color-olive-soft: #a9b28d;
+  --color-olive-wash: #eef0e6;
+  --color-ink: #14130f;
+  --color-ink-2: #3b382e;
+  /* Gris de texte secondaire. Assombri par rapport au gris « design » pour
+     tenir le 4,5:1 même à 13 px sur fond beige. */
+  --color-ink-3: #635f50;
+  --color-tomato: #c2452c;
+  --color-tomato-soft: #e8705a;
+
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-fraunces), ui-serif, Georgia, serif;
+
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
+  --radius-xl: 32px;
+
+  --ease-soft: cubic-bezier(0.22, 1, 0.36, 1);
+
+  --shadow-lift: 0 1px 2px rgb(20 19 15 / 0.04), 0 12px 32px -12px rgb(20 19 15 / 0.16);
+  --shadow-float: 0 2px 6px rgb(20 19 15 / 0.05), 0 26px 60px -20px rgb(20 19 15 / 0.24);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    background-color: var(--color-cream);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background: var(--color-olive);
+    color: var(--color-cream);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-olive);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  h1, h2, h3 {
+    font-family: var(--font-display);
+    font-weight: 400;
+    letter-spacing: -0.022em;
+    line-height: 1.04;
+    text-wrap: balance;
+  }
+
+  p { text-wrap: pretty; }
+}
+
+@layer components {
+  /* Libellé typographique récurrent : petites capitales espacées */
+  .eyebrow {
+    font-size: 0.6875rem;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--color-ink-3);
+  }
+
+  .shell {
+    width: 100%;
+    max-width: 84rem;
+    margin-inline: auto;
+    padding-inline: 1.25rem;
+  }
+  @media (min-width: 768px) { .shell { padding-inline: 2.5rem; } }
+  @media (min-width: 1280px) { .shell { padding-inline: 3.5rem; } }
+
+  .rule {
+    height: 1px;
+    background: color-mix(in oklab, var(--color-ink) 12%, transparent);
+  }
+
+  /* Apparition au scroll — voir components/ui/Reveal.tsx.
+     Aucune JavaScript : le navigateur relie l’animation à la position de
+     défilement. Si `animation-timeline` n’est pas pris en charge, la règle
+     entière est ignorée et le contenu reste simplement visible. */
+  @supports (animation-timeline: view()) {
+    @media (prefers-reduced-motion: no-preference) {
+      .reveal {
+        animation: lr-lift 1s var(--ease-soft) both;
+        animation-timeline: view();
+        animation-range: entry var(--reveal-start, 0%) cover 26%;
+      }
+    }
+  }
+}
+
+/* Entrée du hero : CSS pur. Aucun JavaScript sur le chemin critique,
+   et le contenu reste visible si le script ne s'exécute jamais. */
+@keyframes lr-rise {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes lr-settle {
+  from { transform: scale(1.07); }
+  to { transform: none; }
+}
+/* Apparition au scroll : translation seule, sans variation d’opacité.
+   Un texte à opacité partielle tombe sous le seuil de contraste pendant toute
+   la durée de l’animation — et resterait invisible si la timeline échouait. */
+@keyframes lr-lift {
+  from { transform: translateY(20px); }
+  to { transform: none; }
+}
+@keyframes lr-pop {
+  from { opacity: 0; transform: scale(0.4); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes lr-chip {
+  from { opacity: 0; transform: scale(0.88); }
+  to { opacity: 1; transform: none; }
+}
+
+@layer utilities {
+  .rise {
+    animation: lr-rise 0.9s var(--ease-soft) both;
+    animation-delay: var(--d, 0s);
+  }
+  .settle {
+    animation: lr-settle 1.8s var(--ease-soft) both;
+  }
+  .pop {
+    animation: lr-pop 0.32s var(--ease-soft) both;
+  }
+  .chip-in {
+    animation: lr-chip 0.24s var(--ease-soft) both;
+  }
+  /* Panneau qui se déplie sans hauteur connue à l’avance. */
+  .expander {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.34s var(--ease-soft);
+  }
+  .expander > * {
+    overflow: hidden;
+  }
+  .expander[data-open="true"] {
+    grid-template-rows: 1fr;
+  }
+
+  .fluid-display { font-size: clamp(2.75rem, 7.2vw, 6.5rem); }
+  .fluid-section { font-size: clamp(2rem, 4.4vw, 3.75rem); }
+
+  /* Grain photographique. La texture est pré-calculée dans un PNG de 6 ko :
+     un `feTurbulence` en plein écran coûte plusieurs centaines de millisecondes
+     de composition sur un mobile d’entrée de gamme. */
+  .grain::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.5;
+    background-image: url("/noise.png");
+    background-repeat: repeat;
+  }
+
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { scrollbar-width: none; }
+}
+
+/* Respect strict des préférences de mouvement réduit */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

@@ -1,0 +1,22 @@
+LOGOS DES LIGNES DE TRANSPORT
+=============================
+
+Le site dessine par défaut des pastilles aux couleurs officielles des lignes
+(disque vert olive pour le métro 3, carré orange pour le RER C). C'est fidèle
+et cela n'engage aucun droit d'usage.
+
+Pour utiliser les vrais logos RATP / Île-de-France Mobilités :
+
+1. Déposez ici les fichiers, nommés exactement :
+      metro-3.svg
+      rer-c.svg
+
+2. Ouvrez src/lib/restaurant.ts et passez « logo » à true sur la ligne
+   concernée :
+
+      { reseau: "metro", ligne: "3", station: "Pereire", logo: true },
+
+Rien d'autre à changer : le site bascule sur l'image.
+
+Note : les logos officiels sont des marques déposées. Leur usage sur un site
+commercial demande l'autorisation d'Île-de-France Mobilités.

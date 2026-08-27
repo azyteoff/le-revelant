@@ -1,0 +1,42 @@
+{
+  "$aide": [
+    "Les bases et les garnitures qui accompagnent les plats mijotés.",
+    "",
+    "Ce fichier est un RÉPERTOIRE : il mémorise tout ce que la cuisine a déjà",
+    "proposé, pour ne pas avoir à le retaper chaque matin. Ce qui est servi",
+    "aujourd'hui se choisit dans le back-office (onglet « L'ardoise »), et",
+    "s'inscrit dans content/ardoise.json, pas ici.",
+    "",
+    "Une base ou une garniture saisie pour la première fois dans le back-office",
+    "vient s'ajouter automatiquement à ce répertoire.",
+    "",
+    "La description est facultative : elle s'affiche sous le nom sur le site.",
+    "",
+    "Relevé sur la carte du restaurant le 4 août 2026."
+  ],
+  "bases": [
+    {
+      "nom": "Fusili"
+    },
+    {
+      "nom": "Purée"
+    },
+    {
+      "nom": "Riz"
+    }
+  ],
+  "garnitures": [
+    {
+      "nom": "Lentilles",
+      "description": "Garniture protéinée et goûteuse."
+    },
+    {
+      "nom": "Pois cassés en risotto à la menthe",
+      "description": "Le pois cassé en deux textures, aromatisé à la menthe fraîche."
+    },
+    {
+      "nom": "Tagliatelles de courgettes",
+      "description": "Une garniture cent pour cent courgette, très saine."
+    }
+  ]
+}

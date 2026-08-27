@@ -1,0 +1,191 @@
+{
+  "$doc": "Manifeste photo. Chaque entrée = un emplacement du site. Pour remplacer une photo par une vraie photo du restaurant : déposez votre fichier dans public/img/<slot>.jpg (2000px de large, JPEG qualité 85) et supprimez la clé \"source\". Le script `npm run photos` ne retélécharge que les slots dont le fichier est absent. Next/Image génère ensuite AVIF + WebP automatiquement.",
+  "slots": [
+    {
+      "slot": "hero",
+      "source": "photo-1512621776951-a57141f2eefd",
+      "alt": "Salade composée colorée dans un bol clair, vue de dessus",
+      "credit": "Unsplash"
+    },
+    {
+      "slot": "salade-gourmande",
+      "source": "photo-1646487793655-bbf280273d2f",
+      "alt": "La Gourmande, salade composée aux légumes frais",
+      "credit": "Unsplash"
+    },
+    {
+      "slot": "salade-poulet-pesto",
+      "source": "photo-1604497181015-76590d828b75",
+      "alt": "Salade de pâtes au poulet pesto dans un bol blanc",
+      "credit": "Unsplash"
+    },
+    {
+      "slot": "salade-oceane",
+      "source": "photo-1546069901-ba9599a7e63c",
+      "alt": "Bol de quinoa au saumon et légumes croquants",
+      "credit": "Unsplash"
+    },
+    {
+      "slot": "salade-sportive",
+      "source": "photo-1615865441757-e5328eb6a5ad",
+      "alt": "Salade protéinée aux pâtes, œuf et légumes verts",
+      "credit": "Unsplash"
+    },
+    {
+      "slot": "salade-vegetalienne",
+      "source": "photo-1631311695255-8dde6bf96cb5",
+      "alt": "Salade végétalienne aux lentilles, pois chiches et avocat",
+      "credit": "Unsplash"
+    },
+    {
+      "slot": "composer-home",
+      "source": "photo-1498837167922-ddd27525d352",
+      "alt": "Bar à salade : bacs d'ingrédients frais alignés au comptoir",
+      "credit": "Unsplash"
+    },
+    {
+      "slot": "salade-composee",
+      "source": "photo-1543339308-43e59d6b73a6",
+      "alt": "Salade composée sur mesure dans un bol clair",
+      "credit": "Unsplash"
+    },
+    {
+      "slot": "ingredients",
+      "source": "photo-1665088127661-83aeff6104c4",
+      "alt": "Légumes et herbes fraîches disposés sur fond clair",
+      "credit": "Unsplash"
+    },
+    {
+      "slot": "salle-1",
+      "source": "photo-1613274554329-70f997f5789f",
+      "alt": "Salle lumineuse du restaurant avec plantes vertes",
+      "credit": "Unsplash"
+    },
+    {
+      "slot": "salle-2",
+      "source": "photo-1686100509296-ad4240515e94",
+      "alt": "Comptoir clair et minimaliste",
+      "credit": "Unsplash"
+    },
+    {
+      "slot": "salle-3",
+      "source": "photo-1496113623397-311ec7acb587",
+      "alt": "Tables et suspensions dans une salle chaleureuse",
+      "credit": "Unsplash"
+    },
+    {
+      "slot": "dessert-fromage-blanc",
+      "source": "photo-1488477181946-6428a0291777",
+      "alt": "Fromage blanc aux fraises en verrine",
+      "credit": "Unsplash"
+    },
+    {
+      "slot": "dessert-mousse-chocolat",
+      "source": "photo-1673551491291-5b17d2842988",
+      "alt": "Mousse au chocolat en coupe sur marbre clair",
+      "credit": "Unsplash"
+    },
+    {
+      "slot": "dessert-compote",
+      "source": "photo-1600984177310-c86c8f8fa9c7",
+      "alt": "Compote de pomme maison dans une coupelle en verre",
+      "credit": "Unsplash"
+    },
+    {
+      "slot": "dessert-panna-cotta",
+      "source": "photo-1542116021-0ff087fb0a41",
+      "alt": "Panna cotta nappée de coulis de fruits rouges",
+      "credit": "Unsplash"
+    },
+    {
+      "slot": "dessert-tiramisu-cafe",
+      "source": "photo-1611515596402-451126382452",
+      "alt": "Tiramisu au café en verrine avec biscuits",
+      "credit": "Unsplash"
+    },
+    {
+      "slot": "dessert-tiramisu-speculoos",
+      "source": "photo-1611515596296-069e56d16019",
+      "alt": "Tiramisu spéculoos en verrine",
+      "credit": "Unsplash"
+    },
+    {
+      "slot": "dessert-salade-fruits",
+      "source": "photo-1614630536429-74e43f302c31",
+      "alt": "Salade de fruits frais dans un bol blanc",
+      "credit": "Unsplash"
+    },
+    {
+      "slot": "boisson-coca",
+      "source": "photo-1534260164206-2a3a4a72891d",
+      "alt": "Bouteille de soda sur fond clair",
+      "credit": "Unsplash"
+    },
+    {
+      "slot": "boisson-coca-zero",
+      "source": "photo-1514218953589-2d7d37efd2dc",
+      "alt": "Bouteille de soda sans sucres sur fond blanc",
+      "credit": "Unsplash"
+    },
+    {
+      "slot": "boisson-pellegrino",
+      "source": "photo-1614887065001-06c958a7cddd",
+      "alt": "Verre d'eau pétillante et glaçons",
+      "credit": "Unsplash"
+    },
+    {
+      "slot": "boisson-orange",
+      "source": "photo-1577680716097-9a565ddc2007",
+      "alt": "Verre de jus d'orange sur fond clair",
+      "credit": "Unsplash"
+    },
+    {
+      "slot": "boisson-pomme",
+      "source": "photo-1642604395424-0f47794b240a",
+      "alt": "Verre de jus de fruits vu de dessus",
+      "credit": "Unsplash"
+    },
+    {
+      "slot": "boisson-eau",
+      "source": "photo-1581072338563-90d2a8e7b0d0",
+      "alt": "Verre d'eau fraîche sur fond blanc",
+      "credit": "Unsplash"
+    },
+    {
+      "slot": "boisson-ice-tea",
+      "source": "photo-1499961024600-ad094db305cc",
+      "alt": "Verre de thé glacé",
+      "credit": "Unsplash"
+    }
+  ],
+  "$docIngredients": "Vignettes du bar à salade. Une image carrée par ingrédient, dans public/img/ingredients/<slug>.jpg. Les slugs sont listés dans le back-office, page « Photos ». Un ingrédient sans photo affiche une pastille sobre à la couleur de son groupe — le site reste cohérent en attendant. Conseil : photographiez vos bacs de haut, en lumière du jour, cadrage carré ; c'est 20 minutes et c'est bien mieux que n'importe quelle banque d'images.",
+  "ingredients": {
+    "champignons-de-paris": "photo-1577166071289-3104dfa3f28d",
+    "radis": "photo-1558314266-8017415d5367",
+    "concombre": "photo-1449300079323-02e209d9d3a6",
+    "brocolis": "photo-1615485290382-441e4d049cb5",
+    "oignons-rouges": "photo-1587049276124-b933e057e698",
+    "tomate-fraiche": "photo-1531730802399-67fca7529b13",
+    "artichauts-seches": "photo-1615368255396-752c69784041",
+    "hummus": "photo-1542676303584-c8043a6c7618",
+    "guacamole": "photo-1595016111459-799a195e7452",
+    "feta": "photo-1559561853-08451507cbe7"
+  },
+  "$docPlats": "Photos des plats chauds. Les 151 photos déjà présentes sur l'ancien site sont rapatriées automatiquement dans public/img/plats/<slug>.jpg. Pour les plats qui n'en avaient pas, « remplacements » associe un slug à une photo de substitution, et « familles » fournit un visuel de repli par famille de viande. Pour mettre votre propre photo : déposez-la dans public/img/plats/<slug>.jpg — le slug figure dans content/repertoire-plats.json.",
+  "plats": {
+    "remplacements": {
+      "canard-miel-sesame": "photo-1675718343369-b2e46a5ceeca",
+      "vegetarien-cary-d-aubergines": "photo-1455619452474-d2be8b1e70cd"
+    },
+    "familles": {
+      "Volaille": "photo-1604908176997-125f25cc6f3d",
+      "Poisson": "photo-1574484284002-952d92456975",
+      "Végétarien": "photo-1547592180-85f173990554",
+      "Bœuf": "photo-1565557623262-b51c2513a641",
+      "Veau": "photo-1585937421612-70a008356fbe",
+      "Lapin": "photo-1585937421612-70a008356fbe",
+      "Agneau": "photo-1631452180519-c014fe946bc7",
+      "Porc": "photo-1633945274309-2c16c9682a8c"
+    }
+  }
+}
